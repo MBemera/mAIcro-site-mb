@@ -1,0 +1,31 @@
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <p class="back-row"><a href="{{root}}maicroverse.html">← Back to m<span class="ai">AI</span>croverse</a></p>
+        <h1 id="page-title">Learn by making.</h1>
+        <p class="lead">Explore a topic, see what you’ll learn, and try it in your own m<span class="ai">AI</span>cro learning instance. Choose a course to see its objective, learning outcomes and any preparation or cautions.</p>
+      </div>
+    </section>
+
+    <section class="band" id="prepare" aria-labelledby="prepare-title">
+      <div class="wrap">
+        <details class="prepare">
+          <summary><span class="prepare-title" id="prepare-title">Prepare your learning instance</span></summary>
+          <div class="prepare-body">
+            <p>First, <a href="{{root}}get-started.html">install m<span class="ai">AI</span>cro</a>. The installer can create a separate m<span class="ai">AI</span>croverse learning instance and import the courses. This setup asks for an OpenRouter API key; model use may incur charges.</p>
+            <p>If you skipped that step, run this command in a terminal while m<span class="ai">AI</span>cro is running. It downloads and runs the learning setup script inside the container:</p>
+            <pre class="code"><code>docker exec -it maicro bash -lc 'curl -fsSL https://raw.githubusercontent.com/bloxez/maicroverse/main/create-mv.sh | bash'</code></pre>
+            <p><strong>Before running or repeating it:</strong> the script creates or updates the maicroverse instance, resets its admin key to <code>maicrog2a</code>, imports course scripts, overwrites matching sample files, allows outbound fetches to any host, and configures OpenRouter models and credentials. Review <a href="https://github.com/bloxez/maicroverse/blob/main/create-mv.sh">the script</a> and back up anything you want to keep. Change the default admin key after connecting, before exposing the instance to others.</p>
+            <p>In the IDE, connect to the maicroverse instance and open <code>scripts/courses</code> in the project tree. Use a disposable learning instance: some course setups delete or replace data. Read each course’s warning and README before running its scripts.</p>
+            <p>To open a course straight from this site, save the learning instance’s IDE address below, for example <code>http://localhost:4321/instance/maicroverse/ide</code>. The button needs an IDE version that supports website course links; on older versions, open the README from the project tree instead. Browsers may block checks from an HTTPS website to an HTTP network address.</p>
+          </div>
+        </details>
+{{connect_panel}}
+      </div>
+    </section>
+
+    <section aria-labelledby="catalogue-title">
+      <div class="wrap">
+        <h2 id="catalogue-title">Find your next course.</h2>
+{{course_list}}
+      </div>
+    </section>

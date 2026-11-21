@@ -1,0 +1,116 @@
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <p class="back-row"><a href="{{root}}index.html">← Back to home</a></p>
+        <h1 id="page-title">What m<span class="ai">AI</span>cro is <em>(and why it's built this way)</em></h1>
+      </div>
+    </section>
+
+    <section aria-label="What mAIcro is">
+      <div class="wrap rows rows-3">
+        <div class="problem">
+          <h3>One container instead of five separate services.</h3>
+          <div>
+            <p>A single public Docker image (<code>bloxez/maicro-g2a</code>) running on your machine, storing data in a local folder (<code>~/maicro-data</code> by default).</p>
+            <p>Standing up a database, a vector store, a graph engine, a job scheduler and an API server usually eats the first week of a prototype. Putting them in one container means one install, no idle cloud projects pausing mid-experiment, and one place to look when something breaks.</p>
+          </div>
+        </div>
+
+        <div class="problem">
+          <h3>A toolbox for you <em>and</em> your agents—not a black box.</h3>
+          <div>
+            <p>Standard, inspectable technologies connected cleanly, rather than hidden behind proprietary no-code blocks.</p>
+            <p>AI agents can draft code in seconds, yet they still need structured places to store records, check types and run repeatable steps. When you can read the tables, types and queries yourself, you can verify what the agent did and learn as you go.</p>
+          </div>
+        </div>
+
+        <div class="problem">
+          <h3>A tool for building, paired with a place for learning.</h3>
+          <div>
+            <p>Alongside your own projects, you can spin up <strong>m<span class="ai">AI</span>croverse</strong>—a separate learning instance pre-loaded with 15 practical courses and sample files.</p>
+            <p>Learning by doing is easier when mistakes don't touch your real work. Each course states clearly what you will build and what its setup script resets, so you can experiment freely and start fresh whenever you like.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="how-pieces" aria-labelledby="how-pieces-title">
+      <div class="wrap rows rows-8">
+        <h2 id="how-pieces-title">How the pieces fit together</h2>
+        <div class="prose">
+          <p>Think of m<span class="ai">AI</span>cro as a step-by-step stack. You can start at step 1 with a single table, and only reach for the later steps when your problem genuinely asks for them.</p>
+        </div>
+
+        <div class="problem">
+          <h3>PostgreSQL 18 → Generated GraphQL</h3>
+          <div>
+            <p>You define relational tables in PostgreSQL 18 and reload the schema. m<span class="ai">AI</span>cro automatically generates the matching GraphQL types, queries and mutations. You can also query CSV and JSONL files in File Storage directly as GraphQL results.</p>
+            <p>GraphQL gives both you and your AI tools an explicit, typed contract for reading and changing data—no boilerplate CRUD endpoints to write by hand.</p>
+            <p>In <em>Clients and Documents</em>, you create and seed a <code>clients</code> table, reload the schema, and query client records alongside linked documents. In <em>Data File Fetch</em> and <em>Data Import</em>, you read raw customer and order files and turn them into queryable tables.</p>
+          </div>
+        </div>
+
+        <div class="problem">
+          <h3>Vectors and similarity search (pgvector)</h3>
+          <div>
+            <p>Document-processing tools and <code>pgvector</code> live right inside the same PostgreSQL database, letting you chunk text, store numerical embeddings and search by similarity alongside your regular rows.</p>
+            <p>Exact keyword filters miss fuzzy questions like <em>"How often should the seedlings be watered?"</em> Vector search helps you find relevant passages before generating an answer.</p>
+            <p class="caveat"><strong>As the courses teach:</strong> similarity isn't truth—always check returned passages against the source.</p>
+            <p><em>Book Club</em> combines relational tables with semantic search across notes, so you can test what retrieval catches and what it misses.</p>
+          </div>
+        </div>
+
+        <div class="problem">
+          <h3>Graphs and relationships (Apache AGE / openCypher)</h3>
+          <div>
+            <p>Apache AGE adds graph modelling to PostgreSQL. You model nodes and edges, query them using <code>openCypher</code>, and wrap those Cypher queries as reusable GraphQL operations.</p>
+            <p>Some questions are really about connections—who worked where, how books and readers link, or which rules govern a relationship—where nested table joins quickly get messy.</p>
+            <p><em>HR Graph</em> models employees, employers and employment history in AGE, enforcing business rules through GraphQL-wrapped Cypher operations.</p>
+          </div>
+        </div>
+
+        <div class="problem">
+          <h3>Workflows, cron jobs and typed AI tasks</h3>
+          <div>
+            <p>You compose operations into multi-step workflow chains—mixing database queries, data processing, scheduled cron jobs, browser automation (<em>Browser X4m</em>), persistent memory blocks, and AI tasks/signatures backed by registered GraphQL output types.</p>
+            <p>Requiring an AI step to match a registered GraphQL type turns vague text completions into predictable, structured outputs your next workflow step can trust.</p>
+            <p><em>AI Tasks</em> and <em>AI Signatures and Types</em> walk through defining explicit input/output contracts for document extraction; <em>Scheduled Weather Collector</em> runs a cron job to ingest weather readings; <em>ASX Watcher</em> combines market data, Markdown reports and browser extraction.</p>
+          </div>
+        </div>
+
+        <div class="problem">
+          <h3>TypeScript modules and SQL / REST API wrappers</h3>
+          <div>
+            <p>You can extend the platform with custom TypeScript modules, and wrap custom SQL or external REST APIs so they appear as native GraphQL operations inside your schema.</p>
+            <p>External services become clean building blocks with mapped inputs, outputs, credentials and rate-limit awareness, rather than scattered fetch calls.</p>
+            <p><em>API Wrappers</em> teaches you how to map an external REST API into your GraphQL schema and test it safely.</p>
+          </div>
+        </div>
+
+        <div class="problem">
+          <h3>MCP for your AI agents</h3>
+          <div>
+            <p>With Model Context Protocol (MCP) enabled, compatible AI clients can connect to m<span class="ai">AI</span>cro, inspect your schema and call the GraphQL operations and workflows you've built.</p>
+            <p>Instead of giving an agent raw shell access and hoping for the best, you give it well-defined tools over your data, APIs and processes. You stay in charge of which client connects, what it can access and how its work is reviewed.</p>
+            <p>Use an agent to help plan a schema, query your <em>Memory Essentials</em> blocks, or test small retrieval loops against sample notes.</p>
+          </div>
+        </div>
+
+        <div class="problem">
+          <h3>The embedded IDE (and your own frontend)</h3>
+          <div>
+            <p>Everything runs with a browser-based local IDE (at <code>http://localhost:4321</code> by default) that includes local VitePress help, File Storage, a Markdown wiki browser, multi-step Forms, Charts/dashboards and a CLI. When you're ready, you can also connect your own frontend to the GraphQL API.</p>
+            <p>You can see and interact with your prototype immediately—without building a custom UI first.</p>
+            <p><em>Markdown Foundations</em> builds a connected wiki with diagrams and media; <em>Forms</em> walks through a multi-step aged-care intake form with grouped demonstration submissions.</p>
+          </div>
+        </div>
+
+        <div class="problem">
+          <h3>Courses and m<span class="ai">AI</span>croverse</h3>
+          <div>
+            <p>Fifteen guided, hands-on courses in the open GPL-3.0 <code>maicroverse</code> repository—covering Markdown, data import, graphs, vectors, memory, API wrappers, cron jobs, AI signatures, forms and browser automation.</p>
+            <p>You don't have to stare at a blank schema wondering where to begin. Pick an everyday scenario, run it in your disposable learning instance, inspect every moving part, and adapt the pattern to your own idea.</p>
+          </div>
+        </div>
+        <p class="pager"><a href="{{root}}meet.html">See it in use: Meet m<span class="ai">AI</span>cro →</a><a class="next" href="{{root}}get-started.html">Get started →</a></p>
+      </div>
+    </section>

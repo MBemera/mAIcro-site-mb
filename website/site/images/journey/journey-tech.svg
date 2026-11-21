@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 190" fill="none">
+  <g stroke="#5895b6" stroke-width="1.5" opacity=".7">
+    <path d="M133 30C164 30 165 78 181 85M133 95h42M133 160c31 0 32-48 48-55"/>
+    <path d="M287 30c-31 0-32 48-48 55m48 10h-42m42 65c-31 0-32-48-48-55"/>
+  </g>
+  <circle cx="210" cy="95" r="44" fill="#263d4c" stroke="#4fa6e5" stroke-width="1.5"/>
+  <circle cx="210" cy="95" r="37" stroke="#6396b1" stroke-dasharray="2 5"/>
+  <text x="210" y="101" fill="#f3f9fc" font-family="system-ui, sans-serif" font-size="17" font-weight="700" text-anchor="middle">m<tspan fill="#4fa6e5">AI</tspan>cro</text>
+  <g fill="#27353d" stroke="#47616e">
+    <rect x="8" y="10" width="125" height="40" rx="8"/>
+    <rect x="8" y="75" width="125" height="40" rx="8"/>
+    <rect x="8" y="140" width="125" height="40" rx="8"/>
+    <rect x="287" y="10" width="125" height="40" rx="8"/>
+    <rect x="287" y="75" width="125" height="40" rx="8"/>
+    <rect x="287" y="140" width="125" height="40" rx="8"/>
+  </g>
+  <g fill="none" stroke="#8acbef" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="25" cy="25" rx="6" ry="2.5"/><path d="M19 25v9c0 3 12 3 12 0v-9M19 29.5c0 3 12 3 12 0"/>
+    <path d="m22 91-4 4 4 4m6-8 4 4-4 4"/>
+    <circle cx="20" cy="156" r="2"/><circle cx="30" cy="153" r="2"/><circle cx="30" cy="164" r="2"/><path d="m22 155 6-2m-6 4 6 6"/>
+    <circle cx="303" cy="25" r="2.5"/><circle cx="313" cy="30" r="2.5"/><circle cx="303" cy="35" r="2.5"/><path d="m305 26 6 3m-6 5 6-3"/>
+    <rect x="298" y="89" width="5" height="5" rx="1"/><rect x="309" y="97" width="5" height="5" rx="1"/><path d="M303 91.5h8v5.5"/>
+    <path d="M298 150h12l4 4v12h-16zM310 150v4h4m-13 5h10m-10 4h7"/>
+  </g>
+  <g fill="#edf7fc" font-family="system-ui, sans-serif" font-size="12" font-weight="600">
+    <text x="39" y="34">PostgreSQL</text>
+    <text x="39" y="99">GraphQL</text>
+    <text x="39" y="164">Vectors</text>
+    <text x="322" y="34">Graphs</text>
+    <text x="322" y="99">Workflows</text>
+    <text x="322" y="164">Modules</text>
+  </g>
+</svg>

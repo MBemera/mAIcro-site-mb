@@ -1,0 +1,128 @@
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <h1 id="page-title">Get started</h1>
+        <p class="lead">Set aside about 15 minutes with Docker and a terminal open. You’ll run one setup command; it starts m<span class="ai">AI</span>cro on your own computer and keeps your data there.</p>
+        <nav class="on-this-page" aria-label="On this page">
+          <ol>
+            <li><a href="#before">Before you begin</a></li>
+            <li><a href="#install">Install m<span class="ai">AI</span>cro</a></li>
+            <li><a href="#open">Open your local IDE</a></li>
+            <li><a href="#learning">Set up m<span class="ai">AI</span>croverse</a></li>
+            <li><a href="#help">If something goes wrong</a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <section id="before" aria-labelledby="before-title">
+      <div class="wrap">
+        <h2 id="before-title">A little preparation.</h2>
+        <p class="section-lead">You’ll need an internet connection and a terminal.</p>
+        <ol class="steps">
+          <li>
+            <p><strong>Install and start Docker.</strong></p>
+            <ul class="plain-list step-list">
+              <li>On <strong>macOS</strong> (Intel or Apple Silicon) or <strong>Windows</strong>, start Docker Desktop. (On Windows, you can use PowerShell, or WSL 2 with Docker integration enabled.)</li>
+              <li>On <strong>Linux</strong>, start Docker Engine or Docker Desktop.</li>
+              <li>If Docker isn’t ready yet, the setup script checks whether it is available, installs or starts it when needed, and asks for permission if configuration is required.</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>Review the install script first.</strong></p>
+            <ul class="plain-list step-list">
+              <li>Before running any piped installer, inspect <a href="https://github.com/bloxez/maicroverse/blob/main/maicro-install/run.sh"><code>maicro-install/run.sh</code></a> (or <a href="https://github.com/bloxez/maicroverse/blob/main/maicro-install/run.ps1"><code>run.ps1</code></a> for Windows) in the <code>bloxez/maicroverse</code> GitHub repository.</li>
+              <li>Note what it does: it can start Docker, request administrator privileges, create configuration and data directories (<code>~/maicro-data</code> by default), modify Linux Docker-group membership, and <strong>replace any existing container named <code>maicro</code></strong> (on Windows, it also replaces the platform config file—back up existing data before reinstalling).</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band" id="install" aria-labelledby="install-title">
+      <div class="wrap">
+        <h2 id="install-title">Choose your platform.</h2>
+        <p class="section-lead">The command downloads and runs a setup script from the <code>maicroverse</code> repository. The script may ask for your password or administrator approval, create configuration and data directories, and replace an existing m<span class="ai">AI</span>cro container. It uses port <code>4321</code> by default and keeps your data on your computer.</p>
+        <p>Back up existing m<span class="ai">AI</span>cro data before reinstalling. Follow IDE onboarding and change the default credentials before exposing the service to others.</p>
+        <p>Select your platform, then copy and run its command.</p>
+
+        <div class="platforms" data-platform-picker>
+          <div class="platform-buttons" role="group" aria-label="Choose operating system" hidden>
+            <button type="button" data-platform="windows" aria-pressed="false"><strong>Windows</strong><span>Windows with Docker Desktop</span></button>
+            <button type="button" data-platform="wsl" aria-pressed="false"><strong>WSL</strong><span>Windows Subsystem for Linux with Docker</span></button>
+            <button type="button" data-platform="mac" aria-pressed="false"><strong>Mac</strong><span>MacOS with Docker Desktop</span></button>
+            <button type="button" data-platform="linux" aria-pressed="false"><strong>Linux</strong><span>Linux with Docker</span></button>
+          </div>
+
+          <div class="platform-panel" data-platform="windows">
+            <h3>Windows</h3>
+            <p>Run this command in PowerShell.</p>
+            <pre class="code"><code>irm "https://raw.githubusercontent.com/bloxez/maicroverse/main/maicro-install/run.ps1?cb=$(Get-Random)" -Headers @{ "Cache-Control" = "no-cache" } | iex</code></pre>
+            <p class="platform-actions"><button type="button" class="button button-small" data-copy-command hidden>Copy command</button> <span><a href="https://github.com/bloxez/maicroverse/blob/main/maicro-install/run.ps1">Inspect the installation script ↗</a>, then paste the command into PowerShell and follow its prompts.</span></p>
+          </div>
+          <div class="platform-panel" data-platform="wsl">
+            <h3>WSL 2</h3>
+            <p>Run this command inside your WSL terminal.</p>
+            <pre class="code"><code>curl -fsSL https://raw.githubusercontent.com/bloxez/maicroverse/main/maicro-install/run.sh | sh</code></pre>
+            <p class="platform-actions"><button type="button" class="button button-small" data-copy-command hidden>Copy command</button> <span><a href="https://github.com/bloxez/maicroverse/blob/main/maicro-install/run.sh">Inspect the installation script ↗</a>, then paste the command into WSL terminal and follow its prompts.</span></p>
+          </div>
+          <div class="platform-panel" data-platform="mac">
+            <h3>macOS</h3>
+            <p>Run this command in Terminal. The image supports Intel and Apple Silicon Macs.</p>
+            <pre class="code"><code>curl -fsSL https://raw.githubusercontent.com/bloxez/maicroverse/main/maicro-install/run.sh | sh</code></pre>
+            <p class="platform-actions"><button type="button" class="button button-small" data-copy-command hidden>Copy command</button> <span><a href="https://github.com/bloxez/maicroverse/blob/main/maicro-install/run.sh">Inspect the installation script ↗</a>, then paste the command into Terminal and follow its prompts.</span></p>
+          </div>
+          <div class="platform-panel" data-platform="linux">
+            <h3>Linux</h3>
+            <p>Run this command in your terminal.</p>
+            <pre class="code"><code>curl -fsSL https://raw.githubusercontent.com/bloxez/maicroverse/main/maicro-install/run.sh | sh</code></pre>
+            <p class="platform-actions"><button type="button" class="button button-small" data-copy-command hidden>Copy command</button> <span><a href="https://github.com/bloxez/maicroverse/blob/main/maicro-install/run.sh">Inspect the installation script ↗</a>, then paste the command into Terminal and follow its prompts.</span></p>
+          </div>
+          <p class="status" data-copy-status role="status" aria-live="polite"></p>
+        </div>
+
+        <h3>What happens next?</h3>
+        <ol class="numbered">
+          <li>The script checks Docker and installs, starts or configures it if needed.</li>
+          <li>It pulls the latest m<span class="ai">AI</span>cro image, replaces an existing <code>maicro</code> container if present, and starts your workspace.</li>
+          <li>It offers to set up m<span class="ai">AI</span>croverse and import all available courses. This optional step requests an OpenRouter API key; you can also set it up later from the <a href="{{root}}courses/index.html#prepare">course catalogue</a>.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="open" aria-labelledby="open-title">
+      <div class="wrap">
+        <h2 id="open-title">Open your local IDE and help guide.</h2>
+        <p class="section-lead">Once the <code>maicro</code> container is running, open your local workspace using the default links below. Use your configured port if you changed it.</p>
+        <div class="card local-links">
+          <ul class="link-list link-list-stacked">
+            <li><a href="http://localhost:4321/help/ide/">Local help: localhost:4321/help/ide/</a> — start here to get to know the IDE and complete your setup.</li>
+            <li><a href="http://localhost:4321/instance/maicro/ide">Local IDE: localhost:4321/instance/maicro/ide</a></li>
+            <li><a href="http://localhost:4321/graphql">GraphQL endpoint: localhost:4321/graphql</a></li>
+            <li><a href="https://www.youtube.com/watch?v=dhi7l1kZi9Y">Setup video</a> — more configuration steps, walked through.</li>
+          </ul>
+        </div>
+        <p class="small">By default, the installer keeps data under <code>~/maicro-data</code> on macOS, Linux and WSL, or <code>%USERPROFILE%\maicro-data</code> on Windows. The <a href="https://github.com/bloxez/maicroverse/blob/main/maicro-install/README.md">installer guide</a> covers custom locations, updates, and removal.</p>
+      </div>
+    </section>
+
+    <section class="band" id="learning" aria-labelledby="learning-title">
+      <div class="wrap">
+        <h2 id="learning-title">Set up the m<span class="ai">AI</span>croverse learning instance.</h2>
+        <p class="section-lead">To try the guided courses in an isolated, resettable sandbox, run this while your <code>maicro</code> container is up (review <a href="https://github.com/bloxez/maicroverse/blob/main/create-mv.sh"><code>create-mv.sh</code></a> first if you’d like to see every step):</p>
+        <pre class="code"><code>docker exec -it maicro bash -lc 'curl -fsSL https://raw.githubusercontent.com/bloxez/maicroverse/main/create-mv.sh | bash'</code></pre>
+        <p>During setup you can enter an OpenRouter API key for AI-powered lessons. Remember that this learning instance uses a known default admin key (<code>maicrog2a</code>) and course scripts wipe their demo data on reset—treat it purely as your practice space, then browse the <a href="{{root}}courses/index.html">courses</a> to pick your first lesson.</p>
+      </div>
+    </section>
+
+    <section id="help" aria-labelledby="help-title">
+      <div class="wrap">
+        <h2 id="help-title">If something goes wrong.</h2>
+        <ul class="plain-list">
+          <li>If the local page doesn’t open, wait a moment and retry. Check that Docker is running and inspect <code>docker logs maicro</code>.</li>
+          <li>For setup and help, see the <a href="http://localhost:4321/help/ide/">local IDE help page</a>, the <a href="https://www.youtube.com/watch?v=dhi7l1kZi9Y">setup walkthrough</a>, or <a href="https://discord.gg/q5YUzxSvJ2">Discord</a>.</li>
+          <li>Before you install, read <a href="{{root}}index.html#limits">Limits, plainly</a>: alpha software, local-only, development-grade default credentials.</li>
+        </ul>
+        <p class="back-row"><a href="{{root}}maicroverse.html">When you’re ready to explore, visit m<span class="ai">AI</span>croverse for courses and stories →</a></p>
+        <p class="back-row"><a href="{{root}}index.html">← Back to the beginning</a></p>
+      </div>
+    </section>

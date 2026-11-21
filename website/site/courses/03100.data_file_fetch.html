@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b40">
+  <title>Data File Fetch · mAIcro course</title>
+  <meta name="description" content="Read CSV and JSONL files directly as GraphQL results.">
+  <meta property="og:title" content="Data File Fetch · mAIcro course">
+  <meta property="og:description" content="Read CSV and JSONL files directly as GraphQL results.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../images/logo/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../images/logo/apple-touch-icon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../ide-connect.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><img src="../images/logo/logo-lockup.png" width="1283" height="244" alt="mAIcro home"></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../meet.html">Meet m<span class="ai">AI</span>cro</a></li>
+          <li><a href="../maicroverse.html">m<span class="ai">AI</span>croverse</a></li>
+          <li><a href="../courses/index.html" aria-current="page">Courses</a></li>
+          <li><a href="../stories/index.html">Stories</a></li>
+          <li><a href="../index.html#ask-agent">Ask your agent</a></li>
+        </ul>
+        <a class="nav-cta" href="../get-started.html">Get started <span class="arrow" aria-hidden="true">↗</span></a>
+      </nav>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../meet.html">Meet m<span class="ai">AI</span>cro</a></li>
+          <li><a href="../maicroverse.html">m<span class="ai">AI</span>croverse</a></li>
+          <li><a href="../courses/index.html" aria-current="page">Courses</a></li>
+          <li><a href="../stories/index.html">Stories</a></li>
+          <li><a href="../index.html#ask-agent">Ask your agent</a></li>
+          <li><a href="../get-started.html">Get started</a></li>
+        </ul>
+      </details>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <p class="back-row"><a href="../courses/index.html">← Back to courses</a></p>
+        <h1 id="page-title">Data File Fetch</h1>
+        <p class="lead">Read CSV and JSONL files directly as GraphQL results.</p>
+      </div>
+    </section>
+
+    <section aria-label="About this course">
+      <div class="wrap course-body">
+        <section>
+          <h2>Course objective</h2>
+          <p>Learn to query complete datasets stored in File Storage.</p>
+        </section>
+        <section>
+          <h2>What you’ll learn</h2>
+          <ul><li>Fetch JSONL records as an array.</li><li>Read CSV rows using their header names.</li><li>Recognise errors when files are missing or malformed.</li></ul>
+        </section>
+        <section>
+          <h2>Before you begin</h2>
+          <p>The customer-order sample files must be present in File Storage.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="explore-title">
+      <div class="wrap course-action">
+        <h2 id="explore-title">Open the course in your IDE.</h2>
+        <p>Open the course README in your m<span class="ai">AI</span>cro IDE. You’ll need an instance with the courses installed; see <a href="../courses/index.html#prepare">Prepare your learning instance</a> in the course catalogue. Opening the README won’t run any scripts.</p>
+        <p>On an older IDE without website course-link support, open <code>scripts/courses/03100.data_file_fetch/00.readme.md</code> from the project tree instead.</p>
+        <p class="actions"><button type="button" class="button button-primary" data-open-course="03100.data_file_fetch" disabled><span>Open course in m<span class="ai">AI</span>cro</span> <span class="arrow" aria-hidden="true">↗</span></button></p>
+        <p class="small" data-open-course-hint hidden>Connect your IDE below to enable this button.</p>
+        <div class="connect" data-ide-connect>
+          <p class="card-label">Connect your IDE</p>
+          <p>Running m<span class="ai">AI</span>cro? Save your IDE address to open courses right in your IDE. The address is saved only on this device, and you sign in within the IDE — the website never sees your credentials.</p>
+          <form class="connect-form" data-connect-form hidden>
+            <label for="ide-address">IDE or server address</label>
+            <div class="connect-row">
+              <input id="ide-address" name="address" type="url" inputmode="url" autocomplete="url" placeholder="http://localhost:4321/instance/maicroverse/ide" required>
+              <button type="submit" class="button button-small">Connect</button>
+              <button type="button" class="button button-small" data-disconnect hidden>Forget address</button>
+            </div>
+          </form>
+          <p class="status" data-connect-status role="status" aria-live="polite"></p>
+          <noscript><p class="small">Connecting needs JavaScript. You can still open each course README from the IDE project tree.</p></noscript>
+        </div>
+        <nav class="pager" aria-label="More courses"><a href="../courses/03000.data_import.html">← Data Import</a><a class="next" href="../courses/04000.clients.html">Clients and Documents →</a></nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand-block">
+        <img class="footer-icon" src="../images/logo/logo-app-icon.png" width="421" height="417" alt="">
+        <div>
+          <a class="footer-brand" href="../index.html">m<span class="ai">AI</span>cro<span class="ai">.</span></a>
+          <p>Make something that matters to you.</p>
+        </div>
+      </div>
+      <div class="footer-groups">
+        <div>
+          <p class="footer-heading">Explore</p>
+          <ul class="footer-links">
+            <li><a href="../get-started.html">Get started</a></li>
+            <li><a href="../what-is-maicro.html">What m<span class="ai">AI</span>cro is</a></li>
+            <li><a href="../meet.html">Meet m<span class="ai">AI</span>cro</a></li>
+            <li><a href="../maicroverse.html">m<span class="ai">AI</span>croverse</a></li>
+            <li><a href="../courses/index.html">Courses</a></li>
+            <li><a href="../stories/index.html">Stories</a></li>
+            <li><a href="../index.html#ask-agent">Ask your agent</a></li>
+            <li><a href="../llms.txt">llms.txt</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">m<span class="ai">AI</span>cro</p>
+          <ul class="footer-links">
+            <li><a href="https://www.youtube.com/@TeamBloxez">YouTube ↗</a></li>
+            <li><a href="https://github.com/bloxez">GitHub ↗</a></li>
+            <li><a href="https://discord.gg/q5YUzxSvJ2">Discord ↗</a></li>
+            <li><a href="https://hub.docker.com/r/bloxez/maicro-g2a">Docker image ↗</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Founder</p>
+          <ul class="footer-links">
+            <li><a href="https://www.linkedin.com/in/chrisnurse/" aria-label="Founder on LinkedIn">LinkedIn ↗</a></li>
+            <li><a href="https://github.com/chrisnurse" aria-label="Founder on GitHub">GitHub ↗</a></li>
+            <li><a href="https://www.youtube.com/@TeamBloxez" aria-label="Founder on YouTube">YouTube ↗</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>Made for curious minds and useful little ideas.</p>
+      <p>Draft redesign. Facts checked against public sources on 21 November 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>

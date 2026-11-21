@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-AU"><head><meta charset="utf-8"><title>mAIcro site copy (Carbon v2)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+html, body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 11pt; line-height: 1.45; color: #102b40; }
+h1 { font-size: 18pt; margin: 0 0 10pt; color: #102b40; }
+h2 { font-size: 13.5pt; margin: 16pt 0 6pt; color: #176796; border-bottom: 1px solid #c9e2ef; padding-bottom: 3pt; }
+h3 { font-size: 11.5pt; margin: 12pt 0 4pt; color: #28536f; }
+p { margin: 0 0 8pt; }
+p.li { margin: 0 0 4pt; padding-left: 4pt; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 9.5pt; background: #f0f6f9; padding: 1px 4px; border-radius: 3px; }
+pre { background: #f0f6f9; border: 1px solid #d5e5ec; border-radius: 6px; padding: 10pt; font-size: 8.5pt; line-height: 1.35; white-space: pre-wrap; word-wrap: break-word; }
+pre code { background: none; padding: 0; }
+ul, ol { margin: 0 0 8pt; padding-left: 18pt; }
+li { margin: 0 0 3pt; }
+.footer { font-size: 8.5pt; color: #536a7b; margin-top: 18pt; }
+.pagebreak { page-break-before: always; }
+</style></head><body>
+<h1>mAIcro: a local backend toolbox and learning sandbox for you and your AI agents</h1>
+<p>mAIcro bundles PostgreSQL 18, generated GraphQL, vector search, graph queries, workflows and an MCP server into a single Docker container you run on your own computer. It is both a practical prototyping backend and a hands-on educational environment, shipping with guided courses inside an isolated learning instance called <strong>mAIcroverse</strong>. Built by one developer in Perth and currently in alpha, it is free to download and run locally—giving you a calm, inspectable place to learn how modern software and AI tools fit together, one small experiment at a time.</p>
+<hr />
+<h2>Who this is for</h2>
+<ul>
+<li><strong>Curious builders and tinkerers working with AI agents.</strong> You already use an MCP-compatible AI client and want a real local database, API and tool layer to point it at—where you decide what the agent can reach and review what it changes.</li>
+<li><strong>Educators, students and self-taught learners.</strong> You want to look under the bonnet and understand how tables, GraphQL APIs, embeddings, graphs and workflows actually connect, using a disposable sandbox you can safely break and reset.</li>
+<li><strong>People making smaller, personal software.</strong> Not every idea needs to become a company. Sometimes you just want to replace a tangled spreadsheet, organise client notes, or build a working prototype you can show colleagues to spark better questions.</li>
+<li><strong>Teams testing sensitive workflow shapes early.</strong> You want to explore an intake form or client-record structure on a machine you control, using fictional sample data, long before you commit to a cloud vendor.</li>
+</ul>
+<h2>Who this isn't for</h2>
+<ul>
+<li><strong>If you want a finished web app without opening a terminal.</strong> mAIcro is a backend and local IDE, not a chat-to-app frontend generator. You will use Docker, a terminal and GraphQL, and connect your own frontend when you want a custom interface.</li>
+<li><strong>If you need hosted sign-in, managed compliance and a production path today.</strong> mAIcro is early alpha software without built-in end-user authentication tiers, SLAs or hosted infrastructure. Pick a mature hosted backend platform for live customer data.</li>
+<li><strong>If your main job is syncing dozens of cloud SaaS apps.</strong> When your workflow is mostly moving events between third-party cloud tools rather than storing and querying your own data, a dedicated cloud automation tool will save you time.</li>
+<li><strong>If you want the tiniest possible backend with zero containers.</strong> If all you need is a single-file database with user accounts and no vectors, graphs or Docker, a lightweight single-binary backend is a simpler fit.</li>
+</ul>
+<hr />
+<h2>What mAIcro is (and why it's built this way)</h2>
+<ol>
+<li>
+<p><strong>One container instead of five separate services.</strong><br />
+   - <em>What it is:</em> A single public Docker image (<code>bloxez/maicro-g2a</code>) running on your machine, storing data in a local folder (<code>~/maicro-data</code> by default).<br />
+   - <em>Why it matters:</em> Standing up a database, a vector store, a graph engine, a job scheduler and an API server usually eats the first week of a prototype. Putting them in one container means one install, no idle cloud projects pausing mid-experiment, and one place to look when something breaks.</p>
+</li>
+<li>
+<p><strong>A toolbox for you <em>and</em> your agents—not a black box.</strong><br />
+   - <em>What it is:</em> Standard, inspectable technologies connected cleanly, rather than hidden behind proprietary no-code blocks.<br />
+   - <em>Why it matters:</em> AI agents can draft code in seconds, yet they still need structured places to store records, check types and run repeatable steps. When you can read the tables, types and queries yourself, you can verify what the agent did and learn as you go.</p>
+</li>
+<li>
+<p><strong>A tool for building, paired with a place for learning.</strong><br />
+   - <em>What it is:</em> Alongside your own projects, you can spin up <strong>mAIcroverse</strong>—a separate learning instance pre-loaded with 15 practical courses and sample files.<br />
+   - <em>Why it matters:</em> Learning by doing is easier when mistakes don't touch your real work. Each course states clearly what you will build and what its setup script resets, so you can experiment freely and start fresh whenever you like.</p>
+</li>
+</ol>
+<hr />
+<h2>How the pieces fit together</h2>
+<p>Think of mAIcro as a step-by-step stack. You can start at step 1 with a single table, and only reach for the later steps when your problem genuinely asks for them.</p>
+<h3>1. PostgreSQL 18 → Generated GraphQL</h3>
+<ul>
+<li><strong>What it is:</strong> You define relational tables in PostgreSQL 18 and reload the schema. mAIcro automatically generates the matching GraphQL types, queries and mutations. You can also query CSV and JSONL files in File Storage directly as GraphQL results.</li>
+<li><strong>Why you'd care:</strong> GraphQL gives both you and your AI tools an explicit, typed contract for reading and changing data—no boilerplate CRUD endpoints to write by hand.</li>
+<li><strong>In the courses:</strong> In <em>Clients and Documents</em>, you create and seed a <code>clients</code> table, reload the schema, and query client records alongside linked documents. In <em>Data File Fetch</em> and <em>Data Import</em>, you read raw customer and order files and turn them into queryable tables.</li>
+</ul>
+<h3>2. Vectors and similarity search (<code>pgvector</code>)</h3>
+<ul>
+<li><strong>What it is:</strong> Document-processing tools and <code>pgvector</code> live right inside the same PostgreSQL database, letting you chunk text, store numerical embeddings and search by similarity alongside your regular rows.</li>
+<li><strong>Why you'd care:</strong> Exact keyword filters miss fuzzy questions like <em>"How often should the seedlings be watered?"</em> Vector search helps you find relevant passages before generating an answer. (And as the courses teach: similarity isn't truth—always check returned passages against the source.)</li>
+<li><strong>In the courses:</strong> <em>Book Club</em> combines relational tables with semantic search across notes, so you can test what retrieval catches and what it misses.</li>
+</ul>
+<h3>3. Graphs and relationships (Apache AGE / openCypher)</h3>
+<ul>
+<li><strong>What it is:</strong> Apache AGE adds graph modelling to PostgreSQL. You model nodes and edges, query them using <code>openCypher</code>, and wrap those Cypher queries as reusable GraphQL operations.</li>
+<li><strong>Why you'd care:</strong> Some questions are really about connections—who worked where, how books and readers link, or which rules govern a relationship—where nested table joins quickly get messy.</li>
+<li><strong>In the courses:</strong> <em>HR Graph</em> models employees, employers and employment history in AGE, enforcing business rules through GraphQL-wrapped Cypher operations.</li>
+</ul>
+<h3>4. Workflows, cron jobs and typed AI tasks</h3>
+<ul>
+<li><strong>What it is:</strong> You compose operations into multi-step workflow chains—mixing database queries, data processing, scheduled cron jobs, browser automation (<em>Browser X4m</em>), persistent memory blocks, and AI tasks/signatures backed by registered GraphQL output types.</li>
+<li><strong>Why you'd care:</strong> Requiring an AI step to match a registered GraphQL type turns vague text completions into predictable, structured outputs your next workflow step can trust.</li>
+<li><strong>In the courses:</strong> <em>AI Tasks</em> and <em>AI Signatures and Types</em> walk through defining explicit input/output contracts for document extraction; <em>Scheduled Weather Collector</em> runs a cron job to ingest weather readings; <em>ASX Watcher</em> combines market data, Markdown reports and browser extraction.</li>
+</ul>
+<h3>5. TypeScript modules and SQL / REST API wrappers</h3>
+<ul>
+<li><strong>What it is:</strong> You can extend the platform with custom TypeScript modules, and wrap custom SQL or external REST APIs so they appear as native GraphQL operations inside your schema.</li>
+<li><strong>Why you'd care:</strong> External services become clean building blocks with mapped inputs, outputs, credentials and rate-limit awareness, rather than scattered fetch calls.</li>
+<li><strong>In the courses:</strong> <em>API Wrappers</em> teaches you how to map an external REST API into your GraphQL schema and test it safely.</li>
+</ul>
+<h3>6. MCP for your AI agents</h3>
+<ul>
+<li><strong>What it is:</strong> With Model Context Protocol (MCP) enabled, compatible AI clients can connect to mAIcro, inspect your schema and call the GraphQL operations and workflows you've built.</li>
+<li><strong>Why you'd care:</strong> Instead of giving an agent raw shell access and hoping for the best, you give it well-defined tools over your data, APIs and processes. You stay in charge of which client connects, what it can access and how its work is reviewed.</li>
+<li><strong>In practice:</strong> Use an agent to help plan a schema, query your <em>Memory Essentials</em> blocks, or test small retrieval loops against sample notes.</li>
+</ul>
+<h3>7. The embedded IDE (and your own frontend)</h3>
+<ul>
+<li><strong>What it is:</strong> Everything runs with a browser-based local IDE (at <code>http://localhost:4321</code> by default) that includes local VitePress help, File Storage, a Markdown wiki browser, multi-step Forms, Charts/dashboards and a CLI. When you're ready, you can also connect your own frontend to the GraphQL API.</li>
+<li><strong>Why you'd care:</strong> You can see and interact with your prototype immediately—without building a custom UI first.</li>
+<li><strong>In the courses:</strong> <em>Markdown Foundations</em> builds a connected wiki with diagrams and media; <em>Forms</em> walks through a multi-step aged-care intake form with grouped demonstration submissions.</li>
+</ul>
+<h3>8. Courses and mAIcroverse</h3>
+<ul>
+<li><strong>What it is:</strong> Fifteen guided, hands-on courses in the open GPL-3.0 <code>maicroverse</code> repository—covering Markdown, data import, graphs, vectors, memory, API wrappers, cron jobs, AI signatures, forms and browser automation.</li>
+<li><strong>Why you'd care:</strong> You don't have to stare at a blank schema wondering where to begin. Pick an everyday scenario, run it in your disposable learning instance, inspect every moving part, and adapt the pattern to your own idea.</li>
+</ul>
+<hr />
+<h2>Limits, plainly</h2>
+<p>Knowing what to expect up front makes for a much smoother first afternoon:</p>
+<ul>
+<li><strong>Early alpha software.</strong> mAIcro is at version <code>0.1.x</code> and ships frequent updates. Expect rough edges and changes between releases; keep it for learning, personal tools and prototypes rather than live production or real client records.</li>
+<li><strong>One solo founder.</strong> mAIcro is built and maintained by Chris Nurse (BloxEZ) in Perth, Western Australia.</li>
+<li><strong>Local and self-hosted only.</strong> There is no hosted cloud version and no one-click browser sandbox. You will need Docker (roughly a 635 MB image download), a terminal, and willingness to learn a little GraphQL along the way.</li>
+<li><strong>Local hosting doesn't keep external AI calls local.</strong> Your database lives on your machine, and the learning setup configures AI models through your own OpenRouter API key. Any prompt, document chunk or API payload sent to an external model provider or REST API leaves your computer—so stick to fictional or sample data while you explore.</li>
+<li><strong>Development-grade default credentials.</strong> Out of the box, the installer uses default credentials and signing secrets, exposes local container ports, and the <code>mAIcroverse</code> setup resets the learning admin key to a known public string (<code>maicrog2a</code>) while allowing outbound fetches. Keep your instance on your own machine or lock these settings down before putting it on a shared network.</li>
+<li><strong>Course setups wipe example data.</strong> Many courses drop and recreate demo tables, graphs, cron jobs or memory blocks so you get a clean run. Always run courses inside the disposable <code>mAIcroverse</code> learning instance, separate from projects you care about.</li>
+<li><strong>Unpublished legals and platform source.</strong> While the <code>maicroverse</code> course repository is public under GPL-3.0, the core platform source code, software licence, pricing page, privacy policy and terms of service are not yet published on the site.</li>
+</ul>
+<hr />
+<h2>Get started</h2>
+<p>Set aside about 15 minutes with Docker and a terminal open.</p>
+<ol>
+<li>
+<p><strong>Install and start Docker.</strong><br />
+   - On <strong>macOS</strong> (Intel or Apple Silicon) or <strong>Windows</strong>, start Docker Desktop. (On Windows, you can use PowerShell, or WSL 2 with Docker integration enabled.)<br />
+   - On <strong>Linux</strong>, start Docker Engine or Docker Desktop.</p>
+</li>
+<li>
+<p><strong>Review the install script first.</strong><br />
+   - Before running any piped installer, inspect <a href="https://github.com/bloxez/maicroverse/blob/main/maicro-install/run.sh"><code>maicro-install/run.sh</code></a> (or <code>run.ps1</code> for Windows) in the <code>bloxez/maicroverse</code> GitHub repository.<br />
+   - Note what it does: it can start Docker, request administrator privileges, create configuration and data directories (<code>~/maicro-data</code> by default), modify Linux Docker-group membership, and <strong>replace any existing container named <code>maicro</code></strong> (on Windows, it also replaces the platform config file—back up existing data before reinstalling).</p>
+</li>
+<li>
+<p><strong>Run the installer for your platform.</strong><br />
+   - On <strong>macOS, Linux or Windows WSL 2</strong>, run in your terminal:<br />
+<code>sh
+     curl -fsSL https://raw.githubusercontent.com/bloxez/maicroverse/main/maicro-install/run.sh | sh</code><br />
+   - On <strong>Windows PowerShell</strong>, copy the <code>irm ... | iex</code> PowerShell command from <a href="https://maicro.app/get-started"><code>https://maicro.app/get-started</code></a> (which runs <code>run.ps1</code> from the <code>maicroverse</code> repository).</p>
+</li>
+<li>
+<p><strong>Open your local IDE and help guide.</strong><br />
+   - Once the <code>maicro</code> container is running, visit <code>http://localhost:4321</code> (and <code>http://localhost:4321/help/ide/</code> for setup and local documentation).<br />
+   - If the page doesn't load, check that Docker is running and inspect <code>docker logs maicro</code>.</p>
+</li>
+<li>
+<p><strong>Optional: set up the mAIcroverse learning instance.</strong><br />
+   - To try the 15 guided courses in an isolated, resettable sandbox, run this while your <code>maicro</code> container is up (review <a href="https://github.com/bloxez/maicroverse/blob/main/create-mv.sh"><code>create-mv.sh</code></a> first if you'd like to see every step):<br />
+<code>sh
+     docker exec -it maicro bash -lc 'curl -fsSL https://raw.githubusercontent.com/bloxez/maicroverse/main/create-mv.sh | bash'</code><br />
+   - During setup you can enter an OpenRouter API key for AI-powered lessons. Remember that this learning instance uses a known default admin key (<code>maicrog2a</code>) and course scripts wipe their demo data on reset—treat it purely as your practice space, then browse <a href="https://maicro.app/courses"><code>https://maicro.app/courses</code></a> to pick your first lesson.</p>
+</li>
+</ol>
+<hr />
+<h2>Ask your agent</h2>
+<p>Want a second opinion tailored to what you're building or learning? Copy the prompt below into your preferred AI assistant or coding agent.</p>
+<pre><code class="language-text">I'm looking at mAIcro (https://maicro.app). Help me work out honestly whether it fits what I want to learn or build.
+
+1. Check the primary sources yourself first. If you have web access, fetch and inspect:
+- https://maicro.app and https://maicro.app/get-started (note: the site is a client-rendered JavaScript app, so a plain text fetch may return very little; rely on the GitHub and Docker Hub sources below if needed)
+- Docker Hub image details: https://hub.docker.com/r/bloxez/maicro-g2a
+- The public learning and installer repository: https://github.com/bloxez/maicroverse (especially README.md, readme/install.md, maicro-install/run.sh, and create-mv.sh)
+
+If you cannot browse the web, tell me clearly and work strictly from these verified facts:
+mAIcro is a free, local/self-hosted backend prototyping toolbox and educational sandbox distributed as a single Docker image (bloxez/maicro-g2a). It bundles PostgreSQL 18 with auto-generated GraphQL, pgvector for embeddings and similarity search, Apache AGE for openCypher graph queries, workflow chains and cron jobs, AI tasks/signatures with typed GraphQL outputs, TypeScript modules, SQL and external REST API wrappers, an embedded browser IDE (default http://localhost:4321), and an MCP server. An optional learning instance called mAIcroverse provides 15 guided courses and uses an OpenRouter API key for AI models. It is early alpha software (0.1.x) built by a solo founder in Perth, Western Australia.
+
+2. Explain plainly in a few sentences what mAIcro is—both as a local backend toolbox and as a learning environment—and state clearly what it is not (not a hosted cloud service, and not a no-code frontend app generator).
+
+3. Map it to my situation. If I haven't told you yet, ask me first:
+- What I'm hoping to build or learn
+- How comfortable I am with Docker, a terminal, databases and GraphQL
+- What kind of data is involved (personal notes, fictional sample data, or real client/user records)
+- Which AI clients or coding tools I already use
+
+Once you know, tell me:
+- Which specific pieces of mAIcro I would actually use (tables + GraphQL, vectors, graphs, workflows, wrappers, MCP, or specific mAIcroverse courses) and why
+- What a sensible one-hour first experiment looks like using sample data
+- How an MCP client would interact with it, and what boundaries I should keep around permissions and outbound data
+
+4. Be straight about the limits and alternatives:
+- Remind me of the practical trade-offs that apply to me: alpha stability, single maintainer, Docker/terminal requirement, reviewing the install script before running it, changing default credentials/ports, course scripts resetting demo data, unpublished platform licence/legal pages, and the fact that external AI providers (like OpenRouter) or external APIs receive whatever data I send them.
+- Tell me plainly if a different kind of tool would suit my goal better—for example, a managed hosted backend with built-in user authentication for a live production app, a visual chat-to-app builder if I want a frontend without touching a terminal, a cloud workflow automation tool if I mainly sync third-party SaaS apps, or a tiny single-binary backend if I don't need Docker, vectors, graphs or MCP.
+
+Do not invent or overstate features. If something isn't confirmed in the sources above, say it is unconfirmed rather than guessing.
+</code></pre>
+<hr />
+<p class="footer">mAIcro marketing copy · Carbon pass 2 · 21 Nov 2026 · for Matthew Bright</p>
+<div class="pagebreak"></div><h2>Editor notes</h2>
+<ul>
+<li><strong>Shifted to a warm, tutorial-style flow:</strong> Replaced marketing headlines and the flat feature table with numbered, step-by-step explanatory beats (<em>what it is</em>, <em>why you'd care</em>, and <em>concrete examples from the courses</em>), tracing the architecture naturally from PostgreSQL → GraphQL → vectors → graphs → workflows/typed AI tasks → TypeScript/API wrappers → MCP → IDE → mAIcroverse.</li>
+<li><strong>Wove the educational mission throughout:</strong> Framed mAIcro from the opening paragraph onward as <em>both</em> a local prototyping backend and a hands-on learning sandbox (<code>mAIcroverse</code> + 15 courses), rather than treating courses as a side note.</li>
+<li><strong>Removed every competitor and third-party brand name:</strong> Eliminated the named "Compare" section and removed all references to external products/companies in both the page body ("Who this isn't for") and the "Ask your agent" prompt, replacing them with clear, situational guidance while keeping genuine internal ingredients (PostgreSQL, GraphQL, <code>pgvector</code>, Apache AGE/<code>openCypher</code>, Docker, TypeScript, MCP, OpenRouter).</li>
+<li><strong>Reframed limits kindly and completely:</strong> Kept every required disclosure (alpha <code>0.1.x</code>, solo Perth founder, local-only/no hosted version, outbound AI/API data paths, default credentials and <code>maicrog2a</code> learning key, destructive course reset scripts, unpublished pricing/privacy/terms/platform source, Docker + GraphQL comfort) presented calmly as "what to expect up front" rather than a defensive warning list.</li>
+<li><strong>Grounded "Get started" in the exact install steps:</strong> Included the explicit script-review caution (including container/config replacement and Linux Docker-group notes), the <code>maicroverse</code> <code>curl</code> command, the Windows PowerShell <code>irm</code> reference, <code>http://localhost:4321</code>, and the <code>docker exec</code> command for <code>create-mv.sh</code>.</li>
+<li><strong>Tightened and de-branded the "Ask your agent" prompt:</strong> Improved clarity, included the dual tool + learning framing, asked about the user's comfort with Docker/GraphQL, and replaced all brand names in step 4 with situational tool categories.</li>
+</ul>
+</body></html>

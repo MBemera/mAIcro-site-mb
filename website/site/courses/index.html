@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b40">
+  <title>Courses from mAIcroverse</title>
+  <meta name="description" content="Hands-on mAIcro courses: Markdown, GraphQL tables, vectors, graphs, workflows, API wrappers, AI signatures, forms and browser automation.">
+  <meta property="og:title" content="Courses from mAIcroverse">
+  <meta property="og:description" content="Hands-on mAIcro courses: Markdown, GraphQL tables, vectors, graphs, workflows, API wrappers, AI signatures, forms and browser automation.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../images/logo/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../images/logo/apple-touch-icon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../ide-connect.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><img src="../images/logo/logo-lockup.png" width="1283" height="244" alt="mAIcro home"></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../meet.html">Meet m<span class="ai">AI</span>cro</a></li>
+          <li><a href="../maicroverse.html">m<span class="ai">AI</span>croverse</a></li>
+          <li><a href="../courses/index.html" aria-current="page">Courses</a></li>
+          <li><a href="../stories/index.html">Stories</a></li>
+          <li><a href="../index.html#ask-agent">Ask your agent</a></li>
+        </ul>
+        <a class="nav-cta" href="../get-started.html">Get started <span class="arrow" aria-hidden="true">↗</span></a>
+      </nav>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../meet.html">Meet m<span class="ai">AI</span>cro</a></li>
+          <li><a href="../maicroverse.html">m<span class="ai">AI</span>croverse</a></li>
+          <li><a href="../courses/index.html" aria-current="page">Courses</a></li>
+          <li><a href="../stories/index.html">Stories</a></li>
+          <li><a href="../index.html#ask-agent">Ask your agent</a></li>
+          <li><a href="../get-started.html">Get started</a></li>
+        </ul>
+      </details>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <p class="back-row"><a href="../maicroverse.html">← Back to m<span class="ai">AI</span>croverse</a></p>
+        <h1 id="page-title">Learn by making.</h1>
+        <p class="lead">Explore a topic, see what you’ll learn, and try it in your own m<span class="ai">AI</span>cro learning instance. Choose a course to see its objective, learning outcomes and any preparation or cautions.</p>
+      </div>
+    </section>
+
+    <section class="band" id="prepare" aria-labelledby="prepare-title">
+      <div class="wrap">
+        <details class="prepare">
+          <summary><span class="prepare-title" id="prepare-title">Prepare your learning instance</span></summary>
+          <div class="prepare-body">
+            <p>First, <a href="../get-started.html">install m<span class="ai">AI</span>cro</a>. The installer can create a separate m<span class="ai">AI</span>croverse learning instance and import the courses. This setup asks for an OpenRouter API key; model use may incur charges.</p>
+            <p>If you skipped that step, run this command in a terminal while m<span class="ai">AI</span>cro is running. It downloads and runs the learning setup script inside the container:</p>
+            <pre class="code"><code>docker exec -it maicro bash -lc 'curl -fsSL https://raw.githubusercontent.com/bloxez/maicroverse/main/create-mv.sh | bash'</code></pre>
+            <p><strong>Before running or repeating it:</strong> the script creates or updates the maicroverse instance, resets its admin key to <code>maicrog2a</code>, imports course scripts, overwrites matching sample files, allows outbound fetches to any host, and configures OpenRouter models and credentials. Review <a href="https://github.com/bloxez/maicroverse/blob/main/create-mv.sh">the script</a> and back up anything you want to keep. Change the default admin key after connecting, before exposing the instance to others.</p>
+            <p>In the IDE, connect to the maicroverse instance and open <code>scripts/courses</code> in the project tree. Use a disposable learning instance: some course setups delete or replace data. Read each course’s warning and README before running its scripts.</p>
+            <p>To open a course straight from this site, save the learning instance’s IDE address below, for example <code>http://localhost:4321/instance/maicroverse/ide</code>. The button needs an IDE version that supports website course links; on older versions, open the README from the project tree instead. Browsers may block checks from an HTTPS website to an HTTP network address.</p>
+          </div>
+        </details>
+        <div class="connect" data-ide-connect>
+          <p class="card-label">Connect your IDE</p>
+          <p>Running m<span class="ai">AI</span>cro? Save your IDE address to open courses right in your IDE. The address is saved only on this device, and you sign in within the IDE — the website never sees your credentials.</p>
+          <form class="connect-form" data-connect-form hidden>
+            <label for="ide-address">IDE or server address</label>
+            <div class="connect-row">
+              <input id="ide-address" name="address" type="url" inputmode="url" autocomplete="url" placeholder="http://localhost:4321/instance/maicroverse/ide" required>
+              <button type="submit" class="button button-small">Connect</button>
+              <button type="button" class="button button-small" data-disconnect hidden>Forget address</button>
+            </div>
+          </form>
+          <p class="status" data-connect-status role="status" aria-live="polite"></p>
+          <noscript><p class="small">Connecting needs JavaScript. You can still open each course README from the IDE project tree.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="catalogue-title">
+      <div class="wrap">
+        <h2 id="catalogue-title">Find your next course.</h2>
+        <ul class="course-list">
+          <li>
+            <a href="../courses/00500.markdown.html">
+              <span class="course-name">Markdown Foundations</span>
+              <span class="course-lead">Write, preview and connect documents in mAIcro.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+          <li>
+            <a href="../courses/01000.ai_tasks.html">
+              <span class="course-name">AI Tasks</span>
+              <span class="course-lead">Manage AI tasks and their output types through GraphQL.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+          <li>
+            <a href="../courses/02000.book_club.html">
+              <span class="course-name">Book Club</span>
+              <span class="course-lead">Build a connected book-club dataset with GraphQL, graphs and search.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+          <li>
+            <a href="../courses/02100.memory.html">
+              <span class="course-name">Memory Essentials</span>
+              <span class="course-lead">Practise remembering, recalling and forgetting structured data.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+          <li>
+            <a href="../courses/03000.data_import.html">
+              <span class="course-name">Data Import</span>
+              <span class="course-lead">Turn customer, order and weather files into dashboard-ready data.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+          <li>
+            <a href="../courses/03100.data_file_fetch.html">
+              <span class="course-name">Data File Fetch</span>
+              <span class="course-lead">Read CSV and JSONL files directly as GraphQL results.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+          <li>
+            <a href="../courses/04000.clients.html">
+              <span class="course-name">Clients and Documents</span>
+              <span class="course-lead">Build a client dataset and connect a document to a client.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+          <li>
+            <a href="../courses/05000.hr_graph.html">
+              <span class="course-name">HR Graph</span>
+              <span class="course-lead">Model employment history with a graph and reusable operations.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+          <li>
+            <a href="../courses/06000.api_wrappers.html">
+              <span class="course-name">API Wrappers</span>
+              <span class="course-lead">Bring external REST APIs into your GraphQL schema.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+          <li>
+            <a href="../courses/07000.cron.html">
+              <span class="course-name">Scheduled Weather Collector</span>
+              <span class="course-lead">Collect weather readings on a schedule.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+          <li>
+            <a href="../courses/10000.asx_watcher.html">
+              <span class="course-name">ASX Watcher</span>
+              <span class="course-lead">Explore market data, Markdown reports and browser automation.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+          <li>
+            <a href="../courses/11000.browser_x4m.html">
+              <span class="course-name">Browser Automation</span>
+              <span class="course-lead">Build repeatable browser workflows with Browser X4m.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+          <li>
+            <a href="../courses/12000.ai_signatures.html">
+              <span class="course-name">AI Signatures and Types</span>
+              <span class="course-lead">Define clear input and output contracts for AI signatures.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+          <li>
+            <a href="../courses/20000.forms.html">
+              <span class="course-name">Forms</span>
+              <span class="course-lead">Explore a multi-step form and its submission workflow.</span>
+              <span class="course-more" aria-hidden="true">Explore course →</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand-block">
+        <img class="footer-icon" src="../images/logo/logo-app-icon.png" width="421" height="417" alt="">
+        <div>
+          <a class="footer-brand" href="../index.html">m<span class="ai">AI</span>cro<span class="ai">.</span></a>
+          <p>Make something that matters to you.</p>
+        </div>
+      </div>
+      <div class="footer-groups">
+        <div>
+          <p class="footer-heading">Explore</p>
+          <ul class="footer-links">
+            <li><a href="../get-started.html">Get started</a></li>
+            <li><a href="../what-is-maicro.html">What m<span class="ai">AI</span>cro is</a></li>
+            <li><a href="../meet.html">Meet m<span class="ai">AI</span>cro</a></li>
+            <li><a href="../maicroverse.html">m<span class="ai">AI</span>croverse</a></li>
+            <li><a href="../courses/index.html">Courses</a></li>
+            <li><a href="../stories/index.html">Stories</a></li>
+            <li><a href="../index.html#ask-agent">Ask your agent</a></li>
+            <li><a href="../llms.txt">llms.txt</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">m<span class="ai">AI</span>cro</p>
+          <ul class="footer-links">
+            <li><a href="https://www.youtube.com/@TeamBloxez">YouTube ↗</a></li>
+            <li><a href="https://github.com/bloxez">GitHub ↗</a></li>
+            <li><a href="https://discord.gg/q5YUzxSvJ2">Discord ↗</a></li>
+            <li><a href="https://hub.docker.com/r/bloxez/maicro-g2a">Docker image ↗</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Founder</p>
+          <ul class="footer-links">
+            <li><a href="https://www.linkedin.com/in/chrisnurse/" aria-label="Founder on LinkedIn">LinkedIn ↗</a></li>
+            <li><a href="https://github.com/chrisnurse" aria-label="Founder on GitHub">GitHub ↗</a></li>
+            <li><a href="https://www.youtube.com/@TeamBloxez" aria-label="Founder on YouTube">YouTube ↗</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>Made for curious minds and useful little ideas.</p>
+      <p>Draft redesign. Facts checked against public sources on 21 November 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>

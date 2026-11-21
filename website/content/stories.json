@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "a-toolbox-for-you-and-your-agents",
+    "title": "A toolbox for you and your agents",
+    "summary": "Bring data, APIs, and workflows together so you and your AI tools can spend less time on plumbing.",
+    "interests": [
+      "prototype",
+      "agent"
+    ]
+  },
+  {
+    "slug": "a-smaller-kind-of-software",
+    "title": "A smaller kind of software",
+    "summary": "What if the best reason to build something was simply that it makes your day easier?",
+    "interests": [
+      "personal"
+    ]
+  },
+  {
+    "slug": "learning-by-making",
+    "title": "Learning by making",
+    "summary": "A little curiosity can be the beginning of something useful.",
+    "interests": [
+      "learn"
+    ]
+  },
+  {
+    "slug": "from-documents-to-useful-answers",
+    "title": "From documents to useful answers",
+    "summary": "Explore a small, testable workflow for finding useful information in your own material.",
+    "interests": [
+      "personal",
+      "learn",
+      "prototype"
+    ]
+  }
+]

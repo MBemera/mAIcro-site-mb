@@ -1,0 +1,43 @@
+# mAIcro
+
+> mAIcro is a self-hosted toolbox for personal software and rapid prototyping:
+> PostgreSQL, GraphQL, documents, vectors, graphs, workflows, and AI operations
+> in one local container. It speaks MCP (Model Context Protocol) natively, so
+> AI agents can work with a user's data and operations as tools.
+
+## Getting started as an AI agent
+
+Agentic access to mAIcro is set up by the person you work for, then used by
+your harness:
+
+1. The user installs and starts mAIcro locally: https://maicro.app/get-started
+2. The user generates an MCP key for their project — via the mAIcro IDE, the
+   `InstanceMcpKeyGenerate` GraphQL mutation, or the CLI command
+   `mcp key create --project <id>`. The key is a `projectid:secret` credential
+   and must be kept out of prompts, logs, and source code.
+3. The harness is configured to call the instance's MCP endpoint —
+   `POST http://localhost:4321/mcp` by default — with the MCP key sent as a
+   bearer credential in the `Authorization` header. In VS Code, this is an
+   HTTP server entry in `.vscode/mcp.json` with the key supplied from an
+   environment variable.
+
+## Available MCP tools
+
+- `GetSchema` — retrieve the GraphQL schema; call this first
+- `DbTables` — list tables and schemas
+- `DbTableAdd` — create database tables (then run the `DbReload` mutation so
+  generated queries and mutations appear)
+- `graphql_query` — execute read-only queries
+- `graphql_mutation` — execute data modifications
+- `ExecuteChain` — run chain operations (composable workflow steps)
+
+Prefer queries before mutations, and confirm destructive operations with the
+user. Everything runs on the user's machine; only AI services the user
+configures send data elsewhere.
+
+## Learn more
+
+- Install guide: https://maicro.app/get-started
+- Courses: https://maicro.app/courses
+- Stories: https://maicro.app/stories/
+- Source: https://github.com/bloxez/maicro

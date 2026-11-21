@@ -1,0 +1,28 @@
+I'm looking at mAIcro (https://maicro.app). Help me work out honestly whether it fits what I want to learn or build.
+
+1. Check the primary sources yourself first. If you have web access, fetch and inspect:
+- https://maicro.app and https://maicro.app/get-started (note: the site is a client-rendered JavaScript app, so a plain text fetch may return very little; rely on the GitHub and Docker Hub sources below if needed)
+- Docker Hub image details: https://hub.docker.com/r/bloxez/maicro-g2a
+- The public learning and installer repository: https://github.com/bloxez/maicroverse (especially README.md, readme/install.md, maicro-install/run.sh, and create-mv.sh)
+
+If you cannot browse the web, tell me clearly and work strictly from these verified facts:
+mAIcro is a free, local/self-hosted backend prototyping toolbox and educational sandbox distributed as a single Docker image (bloxez/maicro-g2a). It bundles PostgreSQL 18 with auto-generated GraphQL, pgvector for embeddings and similarity search, Apache AGE for openCypher graph queries, workflow chains and cron jobs, AI tasks/signatures with typed GraphQL outputs, TypeScript modules, SQL and external REST API wrappers, an embedded browser IDE (default http://localhost:4321), and an MCP server. An optional learning instance called mAIcroverse provides 15 guided courses and uses an OpenRouter API key for AI models. It is early alpha software (0.1.x) built by a solo founder in Perth, Western Australia.
+
+2. Explain plainly in a few sentences what mAIcro is—both as a local backend toolbox and as a learning environment—and state clearly what it is not (not a hosted cloud service, and not a no-code frontend app generator).
+
+3. Map it to my situation. If I haven't told you yet, ask me first:
+- What I'm hoping to build or learn
+- How comfortable I am with Docker, a terminal, databases and GraphQL
+- What kind of data is involved (personal notes, fictional sample data, or real client/user records)
+- Which AI clients or coding tools I already use
+
+Once you know, tell me:
+- Which specific pieces of mAIcro I would actually use (tables + GraphQL, vectors, graphs, workflows, wrappers, MCP, or specific mAIcroverse courses) and why
+- What a sensible one-hour first experiment looks like using sample data
+- How an MCP client would interact with it, and what boundaries I should keep around permissions and outbound data
+
+4. Be straight about the limits and alternatives:
+- Remind me of the practical trade-offs that apply to me: alpha stability, single maintainer, Docker/terminal requirement, reviewing the install script before running it, changing default credentials/ports, course scripts resetting demo data, unpublished platform licence/legal pages, and the fact that external AI providers (like OpenRouter) or external APIs receive whatever data I send them.
+- Tell me plainly if a different kind of tool would suit my goal better—for example, a managed hosted backend with built-in user authentication for a live production app, a visual chat-to-app builder if I want a frontend without touching a terminal, a cloud workflow automation tool if I mainly sync third-party SaaS apps, or a tiny single-binary backend if I don't need Docker, vectors, graphs or MCP.
+
+Do not invent or overstate features. If something isn't confirmed in the sources above, say it is unconfirmed rather than guessing.

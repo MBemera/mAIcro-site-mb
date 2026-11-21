@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b40">
+  <title>From documents to useful answers · mAIcro stories</title>
+  <meta name="description" content="Explore a small, testable workflow for finding useful information in your own material.">
+  <meta property="og:title" content="From documents to useful answers · mAIcro stories">
+  <meta property="og:description" content="Explore a small, testable workflow for finding useful information in your own material.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../images/logo/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../images/logo/apple-touch-icon.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><img src="../images/logo/logo-lockup.png" width="1283" height="244" alt="mAIcro home"></a>
+      <nav class="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../meet.html">Meet m<span class="ai">AI</span>cro</a></li>
+          <li><a href="../maicroverse.html">m<span class="ai">AI</span>croverse</a></li>
+          <li><a href="../courses/index.html">Courses</a></li>
+          <li><a href="../stories/index.html" aria-current="page">Stories</a></li>
+          <li><a href="../index.html#ask-agent">Ask your agent</a></li>
+        </ul>
+        <a class="nav-cta" href="../get-started.html">Get started <span class="arrow" aria-hidden="true">↗</span></a>
+      </nav>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../meet.html">Meet m<span class="ai">AI</span>cro</a></li>
+          <li><a href="../maicroverse.html">m<span class="ai">AI</span>croverse</a></li>
+          <li><a href="../courses/index.html">Courses</a></li>
+          <li><a href="../stories/index.html" aria-current="page">Stories</a></li>
+          <li><a href="../index.html#ask-agent">Ask your agent</a></li>
+          <li><a href="../get-started.html">Get started</a></li>
+        </ul>
+      </details>
+    </div>
+  </header>
+
+  <main id="main">
+    <article aria-labelledby="page-title">
+      <section class="page-hero">
+        <div class="wrap">
+          <p class="back-row"><a href="../stories/index.html">← Back to stories</a></p>
+          <h1 id="page-title">From documents to useful answers</h1>
+          <p class="lead">Explore a small, testable workflow for finding useful information in your own material.</p>
+        </div>
+      </section>
+      <section>
+        <div class="wrap prose">
+<p>Imagine you have a collection of notes or documents and want to find the parts relevant to a question. A useful first experiment doesn’t have to answer everything. It can simply help you find a few passages worth reading.</p><h2>Make the question concrete</h2><p>Choose a small set of documents you are comfortable using for practice. For example, write three short fictional notes about a community garden: one about watering, one about planting, and one about a meeting. Ask, “How often should the seedlings be watered?” A useful result would point to the watering note rather than merely mention gardens.</p><p>Write down what a good result would contain before you test. Keep a few questions and expected sources aside so you can check whether your approach finds the right material, including questions that the notes cannot answer.</p><h2>Find before you generate</h2><p>A workflow can extract text, divide it into smaller chunks, and create embeddings: numerical representations used to compare similarity. A vector search can then find chunks related to a question. mAIcro provides document-processing and vector capabilities alongside its database and GraphQL API, a way to ask for and work with data.</p><p>Similarity isn’t the same as truth. A passage about watering mature plants might look relevant but give the wrong advice for seedlings. Read the returned passages, check whether they answer the question, and adjust the query or the way the documents are divided when they don’t.</p><p>If you use an AI model to summarise results, compare its answer with the source material. Try a question with no answer in your notes too: an honest “I don’t know” is more useful than an invented detail.</p><h2>Work with your agent</h2><p>An AI client may help you plan or use the tools involved. When MCP, a standard for connecting AI clients to tools, is enabled, compatible clients can connect to mAIcro and work with its available operations. You still decide what the agent may access and review what it does.</p><p>Embeddings and summaries may involve an external provider, depending on your configuration. Before processing private documents, check which services receive the content, their terms, and the permissions you have granted. Start with sample material while you learn.</p><h2>Keep the loop small</h2><p>Try a few questions, look at the retrieved passages, and record what worked and what was missed. Change one thing at a time, then repeat the same questions. Add complexity only when you can see why it helps.</p><p>Start with the <a href="../courses/00500.markdown.html">Markdown Foundations course</a> if you would like to make and connect some practice documents, or explore more <a href="../courses/index.html">courses</a>. A small, understandable result is a better foundation than a confident answer you can’t verify.</p>
+          <p class="pager"><a href="../stories/index.html">← More stories</a><a class="next" href="../get-started.html">Install m<span class="ai">AI</span>cro →</a></p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand-block">
+        <img class="footer-icon" src="../images/logo/logo-app-icon.png" width="421" height="417" alt="">
+        <div>
+          <a class="footer-brand" href="../index.html">m<span class="ai">AI</span>cro<span class="ai">.</span></a>
+          <p>Make something that matters to you.</p>
+        </div>
+      </div>
+      <div class="footer-groups">
+        <div>
+          <p class="footer-heading">Explore</p>
+          <ul class="footer-links">
+            <li><a href="../get-started.html">Get started</a></li>
+            <li><a href="../what-is-maicro.html">What m<span class="ai">AI</span>cro is</a></li>
+            <li><a href="../meet.html">Meet m<span class="ai">AI</span>cro</a></li>
+            <li><a href="../maicroverse.html">m<span class="ai">AI</span>croverse</a></li>
+            <li><a href="../courses/index.html">Courses</a></li>
+            <li><a href="../stories/index.html">Stories</a></li>
+            <li><a href="../index.html#ask-agent">Ask your agent</a></li>
+            <li><a href="../llms.txt">llms.txt</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">m<span class="ai">AI</span>cro</p>
+          <ul class="footer-links">
+            <li><a href="https://www.youtube.com/@TeamBloxez">YouTube ↗</a></li>
+            <li><a href="https://github.com/bloxez">GitHub ↗</a></li>
+            <li><a href="https://discord.gg/q5YUzxSvJ2">Discord ↗</a></li>
+            <li><a href="https://hub.docker.com/r/bloxez/maicro-g2a">Docker image ↗</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Founder</p>
+          <ul class="footer-links">
+            <li><a href="https://www.linkedin.com/in/chrisnurse/" aria-label="Founder on LinkedIn">LinkedIn ↗</a></li>
+            <li><a href="https://github.com/chrisnurse" aria-label="Founder on GitHub">GitHub ↗</a></li>
+            <li><a href="https://www.youtube.com/@TeamBloxez" aria-label="Founder on YouTube">YouTube ↗</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>Made for curious minds and useful little ideas.</p>
+      <p>Draft redesign. Facts checked against public sources on 21 November 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>

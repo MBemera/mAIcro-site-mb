@@ -1,0 +1,315 @@
+[
+  {
+    "id": "00500.markdown",
+    "title": "Markdown Foundations",
+    "lead": "Write, preview and connect documents in mAIcro.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Learn Markdown by building readable pages and a small connected wiki.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Format text, headings, lists and tables.</li><li>Link pages and include media from File Storage.</li><li>Use code, diagrams and the Markdown browser to build a useful wiki.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Before you begin",
+        "html": "<p>The media lessons use the mAIcroverse wiki sample files.</p>",
+        "class": ""
+      }
+    ]
+  },
+  {
+    "id": "01000.ai_tasks",
+    "title": "AI Tasks",
+    "lead": "Manage AI tasks and their output types through GraphQL.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Explore how AI tasks and the types they depend on can be configured through scripts.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Create, inspect and update an AI task.</li><li>Understand why typed output requires a registered GraphQL type.</li><li>Try a document extraction task and its supporting type.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Take care",
+        "html": "<p>The exercises change project configuration and create, update and delete example tasks and types.</p>",
+        "class": "warning"
+      }
+    ]
+  },
+  {
+    "id": "02000.book_club",
+    "title": "Book Club",
+    "lead": "Build a connected book-club dataset with GraphQL, graphs and search.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Bring several mAIcro capabilities together in a practical social-data example.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Create and query tables through generated GraphQL operations.</li><li>Explore graph relationships, semantic search and asynchronous analysis.</li><li>Try team-scoped notes and a dashboard payload.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Take care",
+        "html": "<p>Setup drops project tables and graph data before recreating the example. Use a disposable learning instance.</p>",
+        "class": "warning"
+      }
+    ]
+  },
+  {
+    "id": "02100.memory",
+    "title": "Memory Essentials",
+    "lead": "Practise remembering, recalling and forgetting structured data.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Follow a complete lifecycle for persistent memory blocks.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Create and read memory blocks and individual paths.</li><li>Update and remove values.</li><li>Use assertions to verify the results of each stage.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Take care",
+        "html": "<p>The setup resets project memory blocks, including existing blocks.</p>",
+        "class": "warning"
+      }
+    ]
+  },
+  {
+    "id": "03000.data_import",
+    "title": "Data Import",
+    "lead": "Turn customer, order and weather files into dashboard-ready data.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Explore an import pipeline from source files through queryable tables and charts.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Import and merge customer and order data.</li><li>Add optional analytics datasets.</li><li>Explore the dashboard payload and Charts panel.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Before you begin",
+        "html": "<p>This example uses the mAIcroverse customer-order sample files.</p>",
+        "class": ""
+      }
+    ]
+  },
+  {
+    "id": "03100.data_file_fetch",
+    "title": "Data File Fetch",
+    "lead": "Read CSV and JSONL files directly as GraphQL results.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Learn to query complete datasets stored in File Storage.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Fetch JSONL records as an array.</li><li>Read CSV rows using their header names.</li><li>Recognise errors when files are missing or malformed.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Before you begin",
+        "html": "<p>The customer-order sample files must be present in File Storage.</p>",
+        "class": ""
+      }
+    ]
+  },
+  {
+    "id": "04000.clients",
+    "title": "Clients and Documents",
+    "lead": "Build a client dataset and connect a document to a client.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Explore a small client-data workflow that combines tables and typed document relationships.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Create and seed a clients table and reload the schema.</li><li>Configure a document relationship.</li><li>Query client records alongside a linked document.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Take care",
+        "html": "<p>Setup clears demo client data and resets the linked document state.</p>",
+        "class": "warning"
+      }
+    ]
+  },
+  {
+    "id": "05000.hr_graph",
+    "title": "HR Graph",
+    "lead": "Model employment history with a graph and reusable operations.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Build an employment-tracking example using Apache AGE and GraphQL-wrapped Cypher.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Model employees, employers and employment relationships.</li><li>Track changes over time.</li><li>Explore business rules enforced by graph operations.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Take care",
+        "html": "<p>Setup wipes project data and uploaded files. Use a disposable learning instance.</p>",
+        "class": "warning"
+      }
+    ]
+  },
+  {
+    "id": "06000.api_wrappers",
+    "title": "API Wrappers",
+    "lead": "Bring external REST APIs into your GraphQL schema.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Register and test GraphQL operations backed by external APIs.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Map inputs and responses between GraphQL and an API.</li><li>Try a public example without an API key.</li><li>Explore provider credentials and rate limits for optional examples.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Before you begin",
+        "html": "<p>Some examples require external provider API keys and internet access.</p>",
+        "class": ""
+      }
+    ]
+  },
+  {
+    "id": "07000.cron",
+    "title": "Scheduled Weather Collector",
+    "lead": "Collect weather readings on a schedule.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Build and inspect a scheduled ingestion workflow using cron jobs.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Register a weather API wrapper and create a readings table.</li><li>Schedule a recurring collection script.</li><li>Inspect job status, errors and stored readings.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Take care",
+        "html": "<p>Setup replaces cron jobs and recreates the weather readings table, deleting existing readings. Use a disposable learning instance.</p>",
+        "class": "warning"
+      }
+    ]
+  },
+  {
+    "id": "10000.asx_watcher",
+    "title": "ASX Watcher",
+    "lead": "Explore market data, Markdown reports and browser automation.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Build a progression from raw ticker data to reports and browser-based extraction.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Fetch and inspect market data.</li><li>Shape results into Markdown reports.</li><li>Navigate and extract information using browser automation.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Before you begin",
+        "html": "<p>The exercises use external websites and require internet access.</p>",
+        "class": ""
+      }
+    ]
+  },
+  {
+    "id": "11000.browser_x4m",
+    "title": "Browser Automation",
+    "lead": "Build repeatable browser workflows with Browser X4m.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Learn browser sessions, page interaction and extraction through practical exercises.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Open, manage and close browser sessions.</li><li>Interact with forms, selectors and uploads.</li><li>Extract page data and capture screenshots in an end-to-end workflow.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Before you begin",
+        "html": "<p>Examples interact with external pages and require browser and network access.</p>",
+        "class": ""
+      }
+    ]
+  },
+  {
+    "id": "12000.ai_signatures",
+    "title": "AI Signatures and Types",
+    "lead": "Define clear input and output contracts for AI signatures.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Create and evolve AI signatures supported by explicit GraphQL types.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Register supporting types and create signatures.</li><li>Run and inspect signatures alongside their type definitions.</li><li>Check valid and invalid inputs and clean up example types.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Before you begin",
+        "html": "<p>Running the examples requires configured AI services.</p>",
+        "class": ""
+      },
+      {
+        "heading": "Take care",
+        "html": "<p>The exercises create and delete example signatures and types.</p>",
+        "class": "warning"
+      }
+    ]
+  },
+  {
+    "id": "20000.forms",
+    "title": "Forms",
+    "lead": "Explore a multi-step form and its submission workflow.",
+    "sections": [
+      {
+        "heading": "Course objective",
+        "html": "<p>Build and inspect an aged-care intake form with realistic demonstration submissions.</p>",
+        "class": ""
+      },
+      {
+        "heading": "What you’ll learn",
+        "html": "<ul><li>Create a structured multi-step form definition.</li><li>Explore saved responses and grouped submissions.</li><li>Use the Forms panel to switch between example submissions.</li></ul>",
+        "class": ""
+      },
+      {
+        "heading": "Take care",
+        "html": "<p>Setup rebuilds the demo form and replaces its previous demo submissions.</p>",
+        "class": "warning"
+      }
+    ]
+  }
+]
